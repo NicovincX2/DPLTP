@@ -8,11 +8,9 @@ public class AffichageStats implements PropertyChangeListener, Affichage {
     private float temperatureMin = 200;
     private float temperatureSum = 0.0f;
     private int actualisationCount;
-    DonneesMeteo donneesMeteo;
 
     public AffichageStats(DonneesMeteo donneesMeteo) {
-        this.donneesMeteo = donneesMeteo;
-        this.donneesMeteo.addPropertyChangeListener(this);
+        donneesMeteo.addPropertyChangeListener(this);
     }
 
     @Override

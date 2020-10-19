@@ -6,11 +6,9 @@ import java.beans.PropertyChangeListener;
 public class AffichagePrevisions implements PropertyChangeListener, Affichage {
     private float currentPression = 1012;
     private float lastPression;
-    DonneesMeteo donneesMeteo;
 
     public AffichagePrevisions(DonneesMeteo donneesMeteo) {
-        this.donneesMeteo = donneesMeteo;
-        this.donneesMeteo.addPropertyChangeListener(this);
+        donneesMeteo.addPropertyChangeListener(this);
     }
 
     @Override

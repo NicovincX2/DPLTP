@@ -68,3 +68,5 @@ Application du pattern **Observateur** avec `java.beans.PropertyChangeListener` 
 Attention. `PropertyChangeSupport.firePropertyChange` ne change que si la valeur de l'attribut est modifiée. On utilise un test avant l'appel de cette fonction pour passer outre. Il pourrait être amélioré avec un objet `Float` auquel l'on pourrait donner la valeur `null`.
 
 L'affichage se fait maintenant dans le `main`.
+
+On peut se passer de l'attribut `DonneesMeteo donneesMeteo` dans les classes Affichage.

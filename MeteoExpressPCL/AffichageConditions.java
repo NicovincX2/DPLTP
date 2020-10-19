@@ -8,11 +8,9 @@ import MeteoExpress.Affichage;
 public class AffichageConditions implements PropertyChangeListener, Affichage {
     private float temperature;
     private float humidite;
-    DonneesMeteo donneesMeteo;
 
     public AffichageConditions(DonneesMeteo donneesMeteo) {
-        this.donneesMeteo = donneesMeteo;
-        this.donneesMeteo.addPropertyChangeListener(this);
+        donneesMeteo.addPropertyChangeListener(this);
     }
 
     @Override
