@@ -1,6 +1,5 @@
 package MeteoExpressPCL;
 
-import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 
@@ -44,7 +43,7 @@ public class DonneesMeteo {
     }
 
     public void setPression(float pression) {
-        // on update si la pression ne chnage pas
+        // on update si la pression ne change pas pour l'affichage des prévisions
         if (this.pression == pression) {
             this.pression = 0.0f; // equal default float value
         }

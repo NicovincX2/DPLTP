@@ -60,3 +60,11 @@ Tout d’abord, comme _Observable_ est une classe, vous devez la sous-classer. A
 Deuxièmement, comme il n’y a pas d’interface _Observable_, vous ne pouvez même pas créer vous-même une implémentation qui fonctionne correctement avec l’API Observer Java intégrée. Pas plus que vous ne pouvez remplacer l’implémentation de `java.util` par une autre (par exemple une nouvelle implémentation multithread).
 
 Si vous observez l’API Observable, vous constatez que la méthode `setChanged()` est protégée. Et alors ? Eh bien, cela signifie que vous ne pouvez pas appeler `setChanged()` tant que vous n’avez pas sous-classé Observable. Autrement dit, vous ne pouvez même pas créer une instance de la classe Observable et composer avec vos propres objets : vous êtes obligé de sous-classer. Cette façon de procéder viole un deuxième principe de conception... préférer la composition à l’héritage.
+
+### MeteoExpressPCL
+
+Application du pattern **Observateur** avec `java.beans.PropertyChangeListener` et `java.beans.PropertyChangeSupport`.
+
+Attention. `PropertyChangeSupport.firePropertyChange` ne change que si la valeur de l'attribut est modifiée. On utilise un test avant l'appel de cette fonction pour passer outre. Il pourrait être amélioré avec un objet `Float` auquel l'on pourrait donner la valeur `null`.
+
+L'affichage se fait maintenant dans le `main`.
