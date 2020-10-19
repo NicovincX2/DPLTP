@@ -40,3 +40,23 @@ La seule et l'unique constante du développement: le changement.
 Application du pattern **Stratégie**.
 
 Pensez chaque ensemble de comportements comme une famille d'algorithmes. Le client utilise une famille d'algorithmes encapsulée pour voler et cancaner.
+
+### MeteoExpress
+
+Application du pattern **Observateur**.
+
+### MeteoExpressOO
+
+Application du pattern **Observateur** avec la classe _Observable_ et l'interface _Observer_.
+
+Dans `java.util.Observable`, la méthode `notifyObservers()` est implémentée de telle façon que les observateurs sont notifiés dans un autre ordre que dans votre propre implémentation. Qui a raison ?`Ni l’un ni l’autre ; nous avons simplement choisi de procéder différemment. Ce qui serait incorrect, en revanche, ce serait d’écrire un programme qui dépende d’une ordre de notification spécifique. Pourquoi ? Parce que si vous devez modifier les implémentations d’Observable/Observer, cet ordre pourrait changer et votre application produirait des résultats erronés. Ce n’est pas précisément ce que l’on considère comme un couplage faible.
+
+---
+
+Malheureusement, l’implémentation de `java.util.Observable` présente un certain nombre de problèmes qui limitent son utilité et ses possibilités de réutilisation.
+
+Tout d’abord, comme _Observable_ est une classe, vous devez la sous-classer. Autrement dit, vous ne pouvez pas ajouter le comportement d’Observable à une classe existante qui étend déjà une autre superclasse. Cela limite son potentiel de réutilisation (la principale raison a priori pour laquelle nous utilisons des patterns).
+
+Deuxièmement, comme il n’y a pas d’interface _Observable_, vous ne pouvez même pas créer vous-même une implémentation qui fonctionne correctement avec l’API Observer Java intégrée. Pas plus que vous ne pouvez remplacer l’implémentation de `java.util` par une autre (par exemple une nouvelle implémentation multithread).
+
+Si vous observez l’API Observable, vous constatez que la méthode `setChanged()` est protégée. Et alors ? Eh bien, cela signifie que vous ne pouvez pas appeler `setChanged()` tant que vous n’avez pas sous-classé Observable. Autrement dit, vous ne pouvez même pas créer une instance de la classe Observable et composer avec vos propres objets : vous êtes obligé de sous-classer. Cette façon de procéder viole un deuxième principe de conception... préférer la composition à l’héritage.
