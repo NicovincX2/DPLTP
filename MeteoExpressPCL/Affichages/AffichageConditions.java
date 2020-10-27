@@ -1,9 +1,10 @@
-package MeteoExpressPCL;
+package MeteoExpressPCL.Affichages;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
-import MeteoExpress.Affichage;
+import MeteoExpressPCL.Affichage;
+import MeteoExpressPCL.DonneesMeteo;
 
 public class AffichageConditions implements PropertyChangeListener, Affichage {
     private float temperature;

@@ -1,5 +1,9 @@
 package MeteoExpress;
 
+import MeteoExpress.Affichages.AffichageConditions;
+import MeteoExpress.Affichages.AffichagePrevisions;
+import MeteoExpress.Affichages.AffichageStats;
+
 public class StationMeteo {
     public static void main(String[] args) {
         DonneesMeteo donneesMeteo = new DonneesMeteo();

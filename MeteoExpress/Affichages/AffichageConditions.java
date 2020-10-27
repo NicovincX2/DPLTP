@@ -1,4 +1,8 @@
-package MeteoExpress;
+package MeteoExpress.Affichages;
+
+import MeteoExpress.Affichage;
+import MeteoExpress.DonneesMeteo;
+import MeteoExpress.Observateur;
 
 public class AffichageConditions implements Observateur, Affichage {
     // Cet affichage implémente Observateur pour pouvoir obtenir les changements de

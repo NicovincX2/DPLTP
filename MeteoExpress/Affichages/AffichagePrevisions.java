@@ -1,4 +1,8 @@
-package MeteoExpress;
+package MeteoExpress.Affichages;
+
+import MeteoExpress.Affichage;
+import MeteoExpress.DonneesMeteo;
+import MeteoExpress.Observateur;
 
 public class AffichagePrevisions implements Observateur, Affichage {
     private float currentPression = 1012;

@@ -1,9 +1,10 @@
-package MeteoExpressOO;
+package MeteoExpressOO.Affichages;
 
 import java.util.Observable;
 import java.util.Observer;
 
-import MeteoExpress.Affichage;
+import MeteoExpressOO.Affichage;
+import MeteoExpressOO.DonneesMeteo;
 
 public class AffichageConditions implements Observer, Affichage {
     Observable observable;

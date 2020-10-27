@@ -1,7 +1,10 @@
-package MeteoExpressPCL;
+package MeteoExpressPCL.Affichages;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
+import MeteoExpressPCL.Affichage;
+import MeteoExpressPCL.DonneesMeteo;
 
 public class AffichageStats implements PropertyChangeListener, Affichage {
     private float temperatureMax = 0.0f;
