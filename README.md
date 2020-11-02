@@ -22,6 +22,11 @@ La seule et l'unique constante du développement: le changement.
  - Efforcez-vous de coupler faiblement les objets qui interagissent,
     - Les conceptions faiblement couplées nous permettent de construire des systèmes OO souples, capables de faire face aux changements parce qu’ils minimisent l’interdépendance entre les objets.
  - Les classes doivent être ouvertes à l’extension, mais fermées à la modification.
+ - **Inversion des dépendances** Dépendez d’abstractions. Ne dépendez pas de classes concrètes.
+    - Il suggère que nos composants de haut niveau ne doivent pas dépendre des composants de bas niveau, mais que les deux doivent dépendre d’abstractions.
+    - _Aucune variable ne doit contenir une référence à une classe concrète_. (Pas de `new` !!)
+    - _Aucune classe ne doit dériver d’une classe concrète_.
+    - _Aucune classe ne doit redéfinir une méthode implémentée dans une classe de base._
 
 ## Patterns OO
 
@@ -37,6 +42,11 @@ La seule et l'unique constante du développement: le changement.
     - Les décorateurs ont le **même supertype que les objets qu’ils décorent**. Nous pouvons donc transmettre un objet décoré à la place de l’objet original (enveloppé).
     - Le décorateur ajoute son propre comportement soit avant soit après avoir délégué le reste du travail à l’objet qu’il décore.
     - Les objets pouvant être décorés à tout moment, nous pouvons les décorer dynamiquement au moment de l’exécution avec autant de décorateurs que nous en avons envie.
+ - _Fabrique_,  définit une interface pour la création d’un objet, mais en laissant aux sous-classes le choix des classes à instancier. Fabrication permet à une classe de déléguer l’instanciation à des sous-classes.
+    - Le Créateur est une classe qui contient les implémentations de toutes les méthodes destinées à manipuler les produits, excepté la méthode de fabrication. La méthode abstraite fabrication() est celle que toutes les sous-classes du Créateur doivent implémenter.
+    - Le CréateurConcret implémente la méthode fabrication(), la méthode qui crée réellement les produits.
+    - Le CréateurConcret a la responsabilité de créer un ou plusieurs produits concrets. C’est la seule classe qui sache comment créer ces produits.
+    - Tous les produits doivent implémenter la même interface, pour que les classes qui utilisent les produits puissent se référer à l’interface, non à la classe concrète.
 
 ## Applications
 
@@ -75,3 +85,7 @@ Attention. `PropertyChangeSupport.firePropertyChange` ne change que si la valeur
 L'affichage se fait maintenant dans le `main`.
 
 On peut se passer de l'attribut `DonneesMeteo donneesMeteo` dans les classes Affichage.
+
+### StarbuzzCoffee
+
+Application du pattern **Décorateur**.
